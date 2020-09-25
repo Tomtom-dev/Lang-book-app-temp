@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    
+    "initdev": "npm run createDB && npm run migrate && npm run seed",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start":"node index.js"
   },
