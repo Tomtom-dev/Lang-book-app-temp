@@ -1,11 +1,13 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-
 const jsonParser = express.json();
+
+const PORT = process.env.port || 5000;
+
 app.use(jsonParser);
 app.use(cors());
-const corsMiddleware = cors();
+
 
 const PORT = 5000;
 
