@@ -75,49 +75,18 @@ router.post("/books", async (req, res) => {
   }
 });
 
-router.put("/bookselection/:userId", async (req, res) => {
-  // console.log("reqeust body", req.body);
+router.delete("/users/:userId/books/:booksId", async (req, res, next) => {
   try {
-    const {  
-      name,
-      author,
-      description,
-      category,
-      language,
-      imageUrl,
-      link,
-      userId
-    } = req.body;
-    console.log("request testing values :", req.body);
-    
-    if ( 
-      !name ||
-      !author ||
-      !description ||
-      !category ||
-      !language ||
-      !imageUrl ||
-      !link ||
-      !userId
-    ) {
-      res.status(400).send("missing parameters");
+    const booksId = parseInt(req.params.booksId);
+    const toDelete = await Books.findByPk(booksId);
+    if (!toDelete) {
+      res.status(404).send("List not found");
     } else {
-      // const hashedPassword = bcrypt.hashSync(password, 10);
-      const event = await Books.patch({
-        name,
-        author,
-        description,
-        category,
-        language,
-        imageUrl,
-        link,
-        userId,
-      });
-      res.json(event);
+      const deleted = await toDelete.destroy();
+      res.json(deleted);
     }
-  } catch (error) {
-    console.log(error.message);
-    // next(e);
+  } catch (e) {
+    next(e);
   }
 });
 
