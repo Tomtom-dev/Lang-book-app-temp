@@ -5,13 +5,9 @@
         "database": "language_book_app",
         "host": "localhost",
         "dialect": "postgres",
-        "ssl": true,
-        "extra": {
-        "ssl": {
-            "rejectUnauthorized": false
-        }
-    }
-        
+        "dialectOptions": {
+            "ssl": true
+          }
     },
     "test": {
         "username": "root",
