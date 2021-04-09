@@ -18,15 +18,6 @@
         "dialect": "mysql"
     },
     "production": {
-        "use_env_variable": "DATABASE_URL",
-        "username": "postgres",
-        "password": "secret",
-        "database": "language_book_app",
-        "host": "localhost",
-        "dialect": "postgres",
-        "ssl": true,
-        "dialectOptions": {
-            "ssl": {"require":true }
-          }
+        "use_env_variable": "DATABASE_URL"
     }
 }
