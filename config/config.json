@@ -4,7 +4,14 @@
         "password": "secret",
         "database": "language_book_app",
         "host": "localhost",
-        "dialect": "postgres"
+        "dialect": "postgres",
+        "ssl": true,
+        "extra": {
+        "ssl": {
+            "rejectUnauthorized": false
+        }
+    }
+        
     },
     "test": {
         "username": "root",
