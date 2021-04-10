@@ -7,7 +7,20 @@ const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
-const db = {};
+
+
+const db = new Sequelize(
+  process.env.DATABASE_URL || `postgres://localhost:5432/${databaseName}`,
+  {
+    logging: false,
+    dialect: 'postgres',
+    dialectOptions: {
+      ssl: true
+    }
+  }
+);
+
+
 pg.defaults.ssl = true;
 
 let sequelize;

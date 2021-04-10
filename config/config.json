@@ -5,9 +5,8 @@
         "database": "language_book_app",
         "host": "localhost",
         "dialect": "postgres",
-        "ssl": true,
         "dialectOptions": {
-            "ssl": {"require":true }
+            "ssl": true
           }
     },
     "test": {
