@@ -4,6 +4,7 @@ const cors = require("cors");
 const jsonParser = express.json();
 
 const PORT = process.env.PORT || 5000;
+process.env.NODE_TLS_REJECT_UNAUTHORIZED='0'
 
 app.use(jsonParser);
 app.use(cors());
