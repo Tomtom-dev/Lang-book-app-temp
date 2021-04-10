@@ -17,6 +17,14 @@
         "dialect": "mysql"
     },
     "production": {
-        "use_env_variable": "DATABASE_URL"
+        "use_env_variable": "DATABASE_URL",
+        "username": "postgres",
+        "password": "secret",
+        "database": "language_book_app",
+        "host": "localhost",
+        "dialect": "postgres",
+        "dialectOptions": {
+            "ssl": true
+          }
     }
 }
